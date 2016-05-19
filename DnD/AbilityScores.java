@@ -53,7 +53,7 @@ public class AbilityScores {
     
     private final int[] baseSTDScores;
     
-    private CharacterSheet characterSheet;
+    private final CharacterSheet characterSheet;
     
    
    
@@ -133,7 +133,7 @@ public class AbilityScores {
  public AbilityScores(CharacterSheet sheet){
  
        
-       //this.characterSheet = sheet;
+       this.characterSheet = sheet;
        
        
        this.strength = 0 ;
@@ -1362,17 +1362,8 @@ public class AbilityScores {
        
     }
        
-    public void getHitpointBonuses(){
-    
-        int conBonus = this.CONmod;
-        int racialBonus;
-        
-        
-    
-    
-       
-   
-   
+    public int getConBonus(){
+        return this.CONmod;
    }
 
 }

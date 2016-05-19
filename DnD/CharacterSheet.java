@@ -34,9 +34,10 @@ public class CharacterSheet {
     private String skinColor;
     private String hairColor;
     private String features;
-   
     
-    private final AbilityScores abilities;
+ 
+    protected final AbilityScores abilities;
+    protected final charClass Class;
     
     
     //Ability Scores 
@@ -68,15 +69,10 @@ public class CharacterSheet {
         //Insert Background here
         
         //Insert Character Classes here later
-  
-        
-        //Insert Races class here later
-        
-     
+        this.Class = new charClass(this);
+       
        
         //Insert Hitpoints here later.
-  
-        // Insert Ability Scores here later.
        
         this.abilities = new AbilityScores(this);
        

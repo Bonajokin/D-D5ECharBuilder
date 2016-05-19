@@ -25,7 +25,7 @@ import java.util.List;
  *
  * @author Bonajokin
  */
-public class Class {
+public class charClass {
     
     private String className;
     private String description;
@@ -34,16 +34,7 @@ public class Class {
     private List<String> ArmWepProf;
    
     
-    public Class(){
-        this.className = "";
-        this.description = "";
-        this.hitDieSides = 0;
-        this.SavThrProf = new LinkedList();
-        this.ArmWepProf = new LinkedList();
-       
-    }
-    
-     public Class(String className, String description, int hitDieSides){
+     public charClass(String className, String description, int hitDieSides){
         this.className = className;
         this.description = description;
         this.hitDieSides = hitDieSides;
@@ -52,7 +43,7 @@ public class Class {
        
     }
     
-     public Class(Class object){
+     public charClass(charClass object){
         this.className = object.className;
         this.description = object.description;
         this.hitDieSides = object.hitDieSides;
