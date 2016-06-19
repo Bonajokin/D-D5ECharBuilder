@@ -37,13 +37,16 @@ public class CharacterSheet {
     
  
     protected final AbilityScores abilities;
-    protected final charClass Class;
+
     
     
     //Ability Scores 
     private int level;
     private String imgURL;
     private int expPoints;
+    
+    //Hitpoints
+    private String className;
    
     
     
@@ -64,12 +67,12 @@ public class CharacterSheet {
         this.imgURL = "";
         this.expPoints = 0;
         this.raceID = 000;
-        
+        this.className = "";
         
         //Insert Background here
         
         //Insert Character Classes here later
-        this.Class = new charClass(this);
+      
        
        
         //Insert Hitpoints here later.
@@ -77,6 +80,12 @@ public class CharacterSheet {
         this.abilities = new AbilityScores(this);
        
     }
+    
+    public String getClassName(){
+        return className;
+    }
+    
+    
     
     public String getName() {
         return name;

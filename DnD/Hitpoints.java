@@ -25,8 +25,8 @@ import java.util.Map;
  */
 public class Hitpoints {
     
-    private int hitDieSides;
-    private final int base;
+   
+    private int base;
     private int conBonus;
     private int racialBonus;
     private int maxHP;
@@ -34,16 +34,17 @@ public class Hitpoints {
     private final Map<String,Integer> hitDieMap;
     
     public Hitpoints(CharacterSheet sheet){
+        
         this.hitDieMap = new HashMap<>();
         this.buildHitDieDB();
         
         this.characterSheet = sheet;
-        this.hitDieSides = 0;
-        this.base = 0;
-        this.conBonus = sheet.abilities.getConBonus();
         
-        if(sheet.getRaceID() == 2){
-            this.racialBonus = sheet.getLevel();
+        this.base = this.hitDieMap.get(this.characterSheet.getClassName());
+        this.conBonus = characterSheet.abilities.getConBonus();
+        
+        if(this.characterSheet.getRaceID() == 2){
+            this.racialBonus = this.characterSheet.getLevel();
         } else {
             this.racialBonus = 0;
         }
@@ -52,12 +53,34 @@ public class Hitpoints {
             
     }
     
-    public void hitPoints(){
+    public void updateRacialBonus(){
+        
+        if(this.characterSheet.getRaceID() == 2){
+            this.racialBonus = this.characterSheet.getLevel();
+            this.calcHitPoints();
+        } else {
+            this.racialBonus = 0;
+            this.calcHitPoints();
+        }
     
-         
+    
+    }
     
     
+    public void updateBase(){
+        this.base = this.hitDieMap.get(this.characterSheet.getClassName());
+        this.calcHitPoints();
+    }
     
+    public void updateConBonus(){
+        this.conBonus = this.characterSheet.abilities.getConBonus();
+        this.calcHitPoints();
+    }
+    
+    public void calcHitPoints(){
+    
+        
+     this.maxHP = this.base + this.conBonus + this.racialBonus;
     
     
     
@@ -83,13 +106,6 @@ public class Hitpoints {
     
     
     }
-    
-    
-        
-        
-
-    
-
     
     
 }

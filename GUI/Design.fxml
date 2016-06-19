@@ -10,7 +10,7 @@
 
 <AnchorPane id="AnchorPane" prefHeight="408.0" prefWidth="454.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.Controller">
     <children>
-      <TabPane prefHeight="446.0" prefWidth="989.0" tabClosingPolicy="UNAVAILABLE">
+      <TabPane prefHeight="446.0" prefWidth="1000.0" tabClosingPolicy="UNAVAILABLE">
         <tabs>
             <Tab text="Home">
               <content>
@@ -19,9 +19,9 @@
             </Tab>
           <Tab text="Personality and Background">
             <content>
-              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="411.0" prefWidth="830.0">
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="414.0" prefWidth="1004.0">
                      <children>
-                        <TextField id="pName" fx:id="charName" layoutX="25.0" layoutY="37.0" />
+                        <TextField id="pName" fx:id="charName" layoutX="25.0" layoutY="37.0" prefHeight="25.0" prefWidth="146.0" />
                         <TextField id="pHeight" layoutX="283.0" layoutY="37.0" prefHeight="25.0" prefWidth="43.0" />
                         <Label layoutX="25.0" layoutY="14.0" text="Name" />
                         <ChoiceBox id="pGender" layoutX="186.0" layoutY="37.0" prefHeight="25.0" prefWidth="84.0" />
@@ -70,10 +70,10 @@
                         <CheckBox layoutX="449.0" layoutY="155.0" mnemonicParsing="false" text="Charisma" />
                         <Separator layoutX="589.0" layoutY="14.0" orientation="VERTICAL" prefHeight="174.0" prefWidth="9.0" />
                         <Label layoutX="607.0" layoutY="14.0" text="Languages" />
-                        <ComboBox layoutX="607.0" layoutY="84.0" prefHeight="25.0" prefWidth="149.0" />
+                        <ComboBox layoutX="607.0" layoutY="84.0" prefHeight="25.0" prefWidth="171.0" />
                         <Label layoutX="607.0" layoutY="41.0" text="Common" />
                         <TextField editable="false" layoutX="607.0" layoutY="63.0" />
-                        <ComboBox layoutX="607.0" layoutY="160.0" prefHeight="25.0" prefWidth="149.0" />
+                        <ComboBox layoutX="607.0" layoutY="160.0" prefHeight="25.0" prefWidth="171.0" />
                         <TextField editable="false" layoutX="607.0" layoutY="139.0" />
                         <Label layoutX="607.0" layoutY="117.0" text="Exotic" />
                         <Separator layoutX="784.0" layoutY="14.0" orientation="VERTICAL" prefHeight="174.0" prefWidth="9.0" />
@@ -100,17 +100,17 @@
                               <Font size="17.0" />
                            </font>
                         </Label>
-                        <Label fx:id="hpConstBonus" layoutX="901.0" layoutY="77.0" text="200">
+                        <Label fx:id="hpConstBonus" layoutX="903.0" layoutY="77.0" text="200">
                            <font>
                               <Font size="17.0" />
                            </font>
                         </Label>
-                        <Label layoutX="933.0" layoutY="77.0" text="+">
+                        <Label layoutX="937.0" layoutY="77.0" text="+">
                            <font>
                               <Font size="17.0" />
                            </font>
                         </Label>
-                        <Label fx:id="hpRacialBonus" layoutX="950.0" layoutY="76.0" text="200">
+                        <Label fx:id="hpRacialBonus" layoutX="952.0" layoutY="77.0" text="200">
                            <font>
                               <Font size="17.0" />
                            </font>
