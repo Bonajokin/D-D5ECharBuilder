@@ -61,7 +61,10 @@
                         <Separator layoutX="436.0" layoutY="28.0" orientation="VERTICAL" prefHeight="373.0" prefWidth="0.0" />
                         <Separator layoutX="27.0" layoutY="72.0" prefHeight="1.0" prefWidth="398.0" />
                         <Separator layoutX="24.0" layoutY="262.0" prefHeight="5.0" prefWidth="404.0" />
-                        <Label layoutX="449.0" layoutY="14.0" text="Saving Throw Profiencies" />
+                        <Label layoutX="449.0" layoutY="14.0" prefHeight="15.0" prefWidth="137.0" text="Saving Throw Profiencies">
+                           <font>
+                              <Font size="10.0" />
+                           </font></Label>
                         <CheckBox layoutX="449.0" layoutY="41.0" mnemonicParsing="false" text="Strength" />
                         <CheckBox layoutX="449.0" layoutY="64.0" mnemonicParsing="false" text="Dexterity" />
                         <CheckBox layoutX="449.0" layoutY="88.0" mnemonicParsing="false" text="Constitution" />
@@ -69,7 +72,7 @@
                         <CheckBox layoutX="449.0" layoutY="133.0" mnemonicParsing="false" text="Wisdom" />
                         <CheckBox layoutX="449.0" layoutY="155.0" mnemonicParsing="false" text="Charisma" />
                         <Separator layoutX="589.0" layoutY="14.0" orientation="VERTICAL" prefHeight="174.0" prefWidth="9.0" />
-                        <Label layoutX="607.0" layoutY="14.0" text="Languages" />
+                        <Label layoutX="608.0" layoutY="14.0" text="Languages" />
                         <ComboBox layoutX="607.0" layoutY="84.0" prefHeight="25.0" prefWidth="171.0" />
                         <Label layoutX="607.0" layoutY="41.0" text="Common" />
                         <TextField editable="false" layoutX="607.0" layoutY="63.0" />

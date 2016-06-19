@@ -37,6 +37,7 @@ public class CharacterSheet {
     
  
     protected final AbilityScores abilities;
+    protected final Hitpoints hitpoints;
 
     
     
@@ -76,8 +77,8 @@ public class CharacterSheet {
        
        
         //Insert Hitpoints here later.
-       
         this.abilities = new AbilityScores(this);
+        this.hitpoints = new Hitpoints(this);
        
     }
     
