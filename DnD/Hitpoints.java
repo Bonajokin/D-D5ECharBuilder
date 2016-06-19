@@ -16,60 +16,96 @@
  */
 package DnD;
 
+import java.util.HashMap;
+import java.util.Map;
+
 /**
  *
  * @author Bonajokin
  */
 public class Hitpoints {
     
-    private int hitDieSides;
-    private final int base;
+   
+    private int base;
     private int conBonus;
     private int racialBonus;
     private int maxHP;
     CharacterSheet characterSheet;
+    private final Map<String,Integer> hitDieMap;
     
-    public Hitpoints(CharacterSheet obj){
-        this.characterSheet = obj;
-        this.hitDieSides = 0;
-        this.base = 0;
-        this.conBonus = 0;
-        this.racialBonus = 0;
-    }
-
-    public int getHitDieSides() {
-        return hitDieSides;
-    }
-
-    public void setHitDieSides(int hitDieSides) {
-        this.hitDieSides = hitDieSides;
-    }
-
-    public int getConBonus() {
-        return conBonus;
-    }
-
-    public void setConBonus(int conBonus) {
-        this.conBonus = conBonus;
-    }
-
-    public int getRacialBonus() {
-        return racialBonus;
-    }
-
-    public void setRacialBonus(int racialBonus) {
-        this.racialBonus = racialBonus;
-    }
-
-    public int getMaxHP() {
-        return maxHP;
-    }
-
-    public void setMaxHP(int maxHP) {
-        this.maxHP = maxHP;
+    public Hitpoints(CharacterSheet sheet){
+        
+        this.hitDieMap = new HashMap<>();
+        this.buildHitDieDB();
+        
+        this.characterSheet = sheet;
+        
+        this.base = this.hitDieMap.get(this.characterSheet.getClassName());
+        this.conBonus = characterSheet.abilities.getConBonus();
+        
+        if(this.characterSheet.getRaceID() == 2){
+            this.racialBonus = this.characterSheet.getLevel();
+        } else {
+            this.racialBonus = 0;
+        }
+        
+     
+            
     }
     
-
+    public void updateRacialBonus(){
+        
+        if(this.characterSheet.getRaceID() == 2){
+            this.racialBonus = this.characterSheet.getLevel();
+            this.calcHitPoints();
+        } else {
+            this.racialBonus = 0;
+            this.calcHitPoints();
+        }
+    
+    
+    }
+    
+    
+    public void updateBase(){
+        this.base = this.hitDieMap.get(this.characterSheet.getClassName());
+        this.calcHitPoints();
+    }
+    
+    public void updateConBonus(){
+        this.conBonus = this.characterSheet.abilities.getConBonus();
+        this.calcHitPoints();
+    }
+    
+    public void calcHitPoints(){
+    
+        
+     this.maxHP = this.base + this.conBonus + this.racialBonus;
+    
+    
+    
+    }
+    
+    private void buildHitDieDB(){
+        
+        this.hitDieMap.put("Barbarian", 12);
+        this.hitDieMap.put("Bard", 8);
+        this.hitDieMap.put("Cleric", 8);
+        this.hitDieMap.put("Druid", 8);
+        this.hitDieMap.put("Fighter", 10);
+        this.hitDieMap.put("Monk", 8);
+        this.hitDieMap.put("Paladin", 10);
+        this.hitDieMap.put("Ranger", 10);
+        this.hitDieMap.put("Rogue", 8);
+        this.hitDieMap.put("Sorceror", 6);
+        this.hitDieMap.put("Warlock", 8);
+        this.hitDieMap.put("Wizard", 6);
+    
+    
+    
+    
+    
+    }
     
     
 }
